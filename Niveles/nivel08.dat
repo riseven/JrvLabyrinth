@@ -1,0 +1,87 @@
+12 5
+                                                        
+15 15 15 15 15 15 15 15 15 15 15 15                     
+15 10 10 10 11 10  6  6  6 10 11 15                     
+15 10 10 10 10 10  6  6  6 10 10 15                     
+15 10 10 10 11 10  6  6  6 10 11 15                     
+15 15 15 15 15 15 15 15 15 15 15 15                     
+                                                        
+                                                       
+;            5             10            15                                                                                                                                                                     
+                                                                                                                                                                                            
+
+; Se debe utilizar la directiva INICIO para indicar las coordenadas en base 1 de la
+; casilla en que empezará el jugador el nivel
+;			x	y
+# INICIO	3	3
+
+; Se puede especificar la luz ambiente que reinara en el nivel. Para hacer niveles
+; mas oscuros..., se especifica en un rango 0..255
+               intensidad
+# LUZ_AMBIENTE 75
+
+;   cod x y color------- atenuacion 
+# LUZ 0 2 4 255 100 100 7
+
+; La directiva PUERTA permite crear puertas en el nivel. Los parametros que recibe
+; son el codigo de la puerta, las coordenadas en base 1 de la celda en que se situara
+; la puerta, y un valor {N,S,E,O} que indica en que frontera de la celda se colocará.
+;			cod	x	y	ori	ini
+
+; La directiva LOSA permite establecer losas de presión que interactuan con otros
+; elementos del mapa. Se le pasa el codigo de la losa. Las posición de la celda en
+; que estará la losa, el codigo de elemento/s sobre es que actuará y la forma en
+; que actuará (E: Excitador, D:Desexcitador, I: Intercambiador)
+;		cod x	y	obj tip	ini
+# LOSA	0	11	3	21	E	A
+
+; La directiva ASCENSOR permite crear ascensores en el juego que permite elevar y
+; descender al jugador (Aqunque en principio no haga falta para descenderlo, puede
+; ser util si la caida es muy grande para que no se haga daño ;). Recibe el codigo
+; de activacion, las coordenadas x e y, y la altura de reposo y de estado excitado.
+;           cod	x	y	des	ex
+# ASCENSOR	21	11	3	10	16
+
+# ASCENSOR	22	7	3	10	11		
+# LOSA		0	7	3	22	E	A
+
+# LOSA		0	3	4	23	I	A
+# ASCENSOR	23	7	2	12	11
+# LOSA		0	7	2	23	D	A
+
+# ASCENSOR	24	8	2	12	8
+# LOSA		0	8	2	24	E	A
+
+# ASCENSOR	25	8	3	8	11
+# LOSA		0	8	3	25	E	A
+
+# ASCENSOR	23	7	4	11	12
+# LOSA		0	7	4	23	E	A
+
+# ASCENSOR	26	8	4	12	13
+# LOSA		0	8	4	26	E	A
+
+# LOSA		0	2	2	27	E	A
+# ASCENSOR	27	9	4	15	13
+# LOSA		11	9	4	27	D	D
+
+# ASCENSOR	28	9	3	15	14
+# LOSA		0	9	3	28	E	A
+
+# ASCENSOR	29	9	2	13	10
+# LOSA		0	9	2	29	E	A
+
+# LOSA		25	4	2	11	E	D
+
+# LOSA		22	3	2	22	D	A
+
+# LOSA		0	2	4	1	D	A
+# PUERTA	1	5	3	O	A
+
+# LOSA		12	10	3	21	D	A
+
+# LOSA		0	4	4	12	I	A
+
+
+	
+

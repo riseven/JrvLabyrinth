@@ -1,0 +1,49 @@
+5 5
+                                                        
+15 15 15 15 15                                          
+15 14 14 14 15                                          
+15 15 14 15 15                                          
+15 14 14 14 15                                          
+15 15 15 15 15                                          
+                                                        
+                                                       
+;       5        10        15                                                                                                                                                                     
+                                                                                                                                                                                            
+
+; Se debe utilizar la directiva INICIO para indicar las coordenadas en base 1 de la
+; casilla en que empezará el jugador el nivel
+;			x	y
+# INICIO	3	4
+
+; Se puede especificar la luz ambiente que reinara en el nivel. Para hacer niveles
+; mas oscuros..., se especifica en un rango 0..255
+               intensidad
+# LUZ_AMBIENTE 75
+
+;   cod x y color------- atenuacion 
+# LUZ 0 2 4 255 100 100 7
+
+; La directiva PUERTA permite crear puertas en el nivel. Los parametros que recibe
+; son el codigo de la puerta, las coordenadas en base 1 de la celda en que se situara
+; la puerta, y un valor {N,S,E,O} que indica en que frontera de la celda se colocará.
+;			cod	x	y	ori	ini
+# PUERTA	1	3	3	S	D
+
+; La directiva LOSA permite establecer losas de presión que interactuan con otros
+; elementos del mapa. Se le pasa el codigo de la losa. Las posición de la celda en
+; que estará la losa, el codigo de elemento/s sobre es que actuará y la forma en
+; que actuará (E: Excitador, D:Desexcitador, I: Intercambiador)
+;		cod x	y	obj tip	ini
+# LOSA	0	4	4	1	E	A
+# LOSA	0	2	2	21	E	A
+# LOSA	0	4	2	21	D	A	
+
+; La directiva ASCENSOR permite crear ascensores en el juego que permite elevar y
+; descender al jugador (Aqunque en principio no haga falta para descenderlo, puede
+; ser util si la caida es muy grande para que no se haga daño ;). Recibe el codigo
+; de activacion, las coordenadas x e y, y la altura de reposo y de estado excitado.
+;           cod	x	y	des	ex
+# ASCENSOR	21	4	2	16	14
+
+	
+

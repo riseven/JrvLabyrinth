@@ -1,0 +1,29 @@
+void
+Jugador::Pintar(int etapa)
+{
+                    glColor4f(0.0, 1.0, 1.0, 1.0);
+                    glBegin(GL_QUADS);
+                    
+                        glVertex3f( posicion.GetX() - 2, posicion.GetY(), posicion.GetZ() - 2);
+                        glVertex3f( posicion.GetX() + 2, posicion.GetY(), posicion.GetZ() - 2);
+                        glVertex3f( posicion.GetX() - 2, posicion.GetY(), posicion.GetZ() + 2);
+                        glVertex3f( posicion.GetX() + 2, posicion.GetY(), posicion.GetZ() + 2);
+                        
+                        glVertex3f( posicion.GetX() - 2, posicion.GetY() + 2, posicion.GetZ() - 2);
+                        glVertex3f( posicion.GetX() + 2, posicion.GetY() + 2, posicion.GetZ() - 2);
+                        glVertex3f( posicion.GetX() - 2, posicion.GetY() + 2, posicion.GetZ() + 2);
+                        glVertex3f( posicion.GetX() + 2, posicion.GetY() + 2, posicion.GetZ() + 2);
+                        
+                        glVertex3f( posicion.GetX() - 2, posicion.GetY() + 2, posicion.GetZ() - 2);
+                        glVertex3f( posicion.GetX() - 2, posicion.GetY() + 2, posicion.GetZ() + 2);
+                        glVertex3f( posicion.GetX() - 2, posicion.GetY() - 2, posicion.GetZ() - 2);
+                        glVertex3f( posicion.GetX() - 2, posicion.GetY() - 2, posicion.GetZ() + 2);
+                        
+                        glVertex3f( posicion.GetX() + 2, posicion.GetY() + 2, posicion.GetZ() - 2);
+                        glVertex3f( posicion.GetX() + 2, posicion.GetY() + 2, posicion.GetZ() + 2);
+                        glVertex3f( posicion.GetX() + 2, posicion.GetY() - 2, posicion.GetZ() - 2);
+                        glVertex3f( posicion.GetX() + 2, posicion.GetY() - 2, posicion.GetZ() + 2);
+                        
+                     glEnd(); 
+    
+}
